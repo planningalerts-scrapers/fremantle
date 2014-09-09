@@ -3,26 +3,28 @@
 require 'scraperwiki'
 require 'mechanize'
 
-def scrape_page
-  $page.search("tr[@class='normalRow'], tr[@class='alternateRow']").each do |row|
-    $cells = row.search('td')
-    $council_reference = $cells[0].search("input").to_s.split('"')[5]
-    if $council_reference.start_with?("DA", "LL", "VA", "WAPC") #selects planning applications only
-      save_record
+def scrape_page(page)
+  page.search("tr[@class='normalRow'], tr[@class='alternateRow']").each do |row|
+    cells = row.search('td')
+
+    council_reference = cells[0].search("a").text
+    if council_reference && council_reference.start_with?("DA", "LL", "VA", "WAPC") #selects planning applications only
+      puts "Found #{council_reference}"
+      save_record(council_reference, cells)
     else
-      puts "skipping non planning application " + $council_reference
+      puts "skipping non planning application #{council_reference}"
     end
   end
 end
 
-def save_record
+def save_record(council_reference, cells)
   record = {
-  'council_reference' => $council_reference,
-  'address' => $cells[5].search("input").to_s.split('"')[5][0...-5],
-  'description' => $cells[2].text,
+  'council_reference' => council_reference,
+  'address' => cells[5].search("a").text,
+  'description' => cells[2].text,
   'info_url' => 'https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ',
   'comment_url' => 'mailto:info@fremantle.wa.gov.au',
-  'date_received' => Date.parse($cells[1].text).strftime("%Y-%m-%d"),
+  'date_received' => Date.parse(cells[1].text).strftime("%Y-%m-%d"),
   'date_scraped' => Date.today.to_s,
   }
   if (ScraperWiki.select("* from data where `council_reference`='#{record['council_reference']}'").empty? rescue true)
@@ -37,8 +39,8 @@ agent = Mechanize.new { |a|
   #a.user_agent_alias = 'Mac Firefox'
 }
 url = "https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearchResults.aspx?Field=S&Period=L7&r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.SL7"
-$page = agent.get(url)
-scrape_page
+page = agent.get(url)
+scrape_page(page)
 
 # The above code searches the first 20 applications submitted in the last 7 days.
 # There is sometimes more than 20 applications.
