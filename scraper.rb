@@ -8,7 +8,7 @@ def scrape_page(page)
     cells = row.search('td')
 
     council_reference = cells[0].search("a").text
-    if council_reference && council_reference.start_with?("DA", "LL", "VA", "WAPC") #selects planning applications only
+    if council_reference && council_reference.start_with?("DA", "LL", "VA", "WAPC", "ET", "PW") #selects planning applications only
       puts "Found #{council_reference}"
       save_record(council_reference, cells)
     else
