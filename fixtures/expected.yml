@@ -1,0 +1,36 @@
+---
+- council_reference: DA0222/19
+  address: 1A Yalgoo Avenue WHITE GUM VALLEY WA 6162
+  description: Patio Addition to Existing House
+  info_url: https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ
+  comment_url: mailto:info@fremantle.wa.gov.au
+  date_received: '2019-06-20'
+  date_scraped: '2019-05-15'
+- council_reference: DA0223/19
+  address: 21 Central Avenue BEACONSFIELD WA 6162
+  description: Additions and Re-Roof of Existing House
+  info_url: https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ
+  comment_url: mailto:info@fremantle.wa.gov.au
+  date_received: '2019-06-21'
+  date_scraped: '2019-05-15'
+- council_reference: DA0224/19
+  address: 1 Silver Street SOUTH FREMANTLE WA 6162
+  description: Two Storey Single House
+  info_url: https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ
+  comment_url: mailto:info@fremantle.wa.gov.au
+  date_received: '2019-06-21'
+  date_scraped: '2019-05-15'
+- council_reference: DA0225/19
+  address: 26 Suffolk Street FREMANTLE WA 6160
+  description: Ancillary Accommodation to Existing House
+  info_url: https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ
+  comment_url: mailto:info@fremantle.wa.gov.au
+  date_received: '2019-06-24'
+  date_scraped: '2019-05-15'
+- council_reference: VA0022/19
+  address: 155 Holland Street FREMANTLE WA 6160
+  description: DA - Variation to DA0611/13, VA0031/18, VA0015/19
+  info_url: https://eservices.fremantle.wa.gov.au/ePropertyPROD/P1/eTrack/eTrackApplicationSearch.aspx?r=P1.WEBGUEST&f=%24P1.ETR.SEARCH.ENQ
+  comment_url: mailto:info@fremantle.wa.gov.au
+  date_received: '2019-06-21'
+  date_scraped: '2019-05-15'
