@@ -7,6 +7,14 @@ GIT
       httpclient
       sqlite_magic
 
+GIT
+  remote: https://github.com/planningalerts-scrapers/technology_one_scraper.git
+  revision: 9dce7cfcc37f0e92af8c243a9aa2b4cca7e973df
+  specs:
+    technology_one_scraper (0.1.0)
+      mechanize
+      scraperwiki
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,8 +66,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  mechanize
   scraperwiki!
+  technology_one_scraper!
   timecop
   vcr
   webmock
